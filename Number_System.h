@@ -2,7 +2,8 @@
 #ifndef NUMBER_SYSTEM_H
 #define NUMBER_SYSTEM_H
 
-class Numbers {
+class Numbers
+{
 private:
 	int input;
 	int input2;
@@ -22,6 +23,8 @@ public:
 	void Decimal_Octal();
 	void Decimal_HexaDecimal();
 	void Decimal_BCD();
+
+	void Binary_Decimal();
 };
 
 #endif

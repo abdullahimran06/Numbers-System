@@ -1,6 +1,8 @@
 #include "Number_System.h"
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <cmath>
 #include <vector>
 using namespace std;
 
@@ -107,6 +109,26 @@ void Numbers::Navigations2()
 	case 3:
 		break;
 	case 4:
+		if (input2 == 1)
+		{
+			Binary_Decimal();
+		}
+		else if (input2 == 2)
+		{
+			Decimal_Octal();
+		}
+		else if (input2 == 3)
+		{
+			Decimal_HexaDecimal();
+		}
+		else if (input2 == 4)
+		{
+			Decimal_Binary();
+		}
+		else if (input2 == 5)
+		{
+			Decimal_BCD();
+		}
 		break;
 	case 5:
 		break;
@@ -247,4 +269,41 @@ void Numbers::Decimal_BCD()
 	}
 
 	cout << "BCD =" << bcd << endl;
+}
+
+int stringToInt(string s)
+{
+	int num = 0;
+
+	for (int i = 0; i < s.length(); i++)
+	{
+		num = num * 10 + (s[i] - '0');
+	}
+
+	return num;
+}
+
+void Numbers::Binary_Decimal()
+{
+	vector<string> binary;
+	int decimal = 0;
+	string temp;
+	cout << "Enter Binary Number: ";
+	cin >> temp;
+	binary.push_back(temp);
+	for (int i = 0; i < binary.size(); i++)
+	{
+		int expo = binary[i].length() - 1;
+
+		for (int j = 0; j < binary[i].length(); j++)
+		{
+			int num = binary[i][j] - '0';
+			if (num == 1)
+			{
+				decimal += (pow(2, expo)) * num;
+			}
+			expo--;
+		}
+	}
+	cout << "Decimal = " << decimal << endl;
 }
