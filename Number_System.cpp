@@ -10,7 +10,7 @@ const void Numbers::Menu()
 	cout << "2. Octal" << endl;
 	cout << "3. HexaDecimal" << endl;
 	cout << "4. Binary" << endl;
-	cout << "5. BCD" << endl;
+	cout << "5. BCD10" << endl;
 	cout << "6. Exit" << endl;
 
 	int inp;
