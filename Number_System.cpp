@@ -6,6 +6,24 @@
 #include <vector>
 using namespace std;
 
+
+string reverse(string str)
+{ 
+	int s, e;
+	s = 0;
+	e = (str.length()) - 1;
+	char temp;
+	while (s < e)
+	{
+		temp = str[s];
+		str[s] = str[e];
+		str[e] = temp;
+		s++;
+		e--;
+	}
+	return str;
+}
+
 const void Numbers::Menu()
 {
 	cout << "1. Decimal" << endl;
@@ -16,7 +34,7 @@ const void Numbers::Menu()
 	cout << "6. Exit" << endl;
 
 	int inp;
-	cout << "Choose a Number System: ";
+	cout << "Choose a Number System: ";// which no is user is going to enter 
 	cin >> inp;
 	setInput(inp);
 }
@@ -35,11 +53,19 @@ const void Numbers::Menu2()
 	setInput2(inp);
 }
 
-void Numbers::setInput(int input) { this->input = input; }
-int Numbers::getInput() const { return input; }
+void Numbers::setInput(int input) {
+	this->input = input;
+}
+int Numbers::getInput() const {
+	return input;
+}
 
-void Numbers::setInput2(int input2) { this->input2 = input2; }
-int Numbers::getInput2() const { return input2; }
+void Numbers::setInput2(int input2) {
+	this->input2 = input2;
+}
+int Numbers::getInput2() const {
+	return input2;
+}
 
 void Numbers::Navigations()
 {
@@ -48,26 +74,15 @@ void Numbers::Navigations()
 	switch (input)
 	{
 	case 1:
-		Menu2();
-		Navigations2();
-		break;
 	case 2:
-		Menu2();
-		Navigations2();
-		break;
 	case 3:
-		Menu2();
-		Navigations2();
-		break;
 	case 4:
-		Menu2();
-		Navigations2();
-		break;
 	case 5:
 		Menu2();
 		Navigations2();
 		break;
 	case 6:
+		cout << "exit"<<endl;
 		break;
 	default:
 		cout << "Invalid Input!" << endl;
@@ -82,7 +97,7 @@ void Numbers::Navigations2()
 	switch (input)
 	{
 
-	case 1:
+	case 1: // decimal to other function conversion
 		if (input2 == 1)
 		{
 			Decimal_Decimal();
@@ -179,13 +194,13 @@ void Numbers::Decimal_Decimal()
 	int decimal;
 	cout << "Enter Decimal Number: ";
 	cin >> decimal;
-	cout << "Binary = " << decimal << endl;
+	cout << "Binary = " << decimal << endl; // ???? why binary
 }
 
 void Numbers::Decimal_Binary()
 {
 	int decimal;
-	string binary = " ";
+	string binary = "";
 	cout << "Enter Decimal Number: ";
 	cin >> decimal;
 	while (decimal >= 1)
@@ -201,6 +216,7 @@ void Numbers::Decimal_Binary()
 			binary += "1";
 		}
 	}
+	binary = reverse(binary);
 	cout << "Binary =" << binary << endl;
 }
 
