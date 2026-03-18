@@ -2,7 +2,6 @@
 #ifndef NUMBER_SYSTEM_H
 #define NUMBER_SYSTEM_H
 #include <string>
-#include <vector>
 
 class Numbers
 {
@@ -23,11 +22,16 @@ public:
 	void Decimal_Decimal();
 	void Decimal_Binary();
 	int Decimal_Octal(int decimal);
-	void Decimal_HexaDecimal();
-	void Decimal_BCD();
+	std::string Decimal_HexaDecimal(int decimal);
+	std::string Decimal_BCD(std::string decimal);
 
 	int Binary_Decimal();
+	void Binary_Binary();
 	void Binary_Octal();
+	void Binary_HexaDecimal();
+	void Binary_BCD();
+
+	int Octal_Decimal();
 };
 
 #endif
