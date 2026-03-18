@@ -6,9 +6,8 @@
 #include <vector>
 using namespace std;
 
-
 string reverse(string str)
-{ 
+{
 	int s, e;
 	s = 0;
 	e = (str.length()) - 1;
@@ -34,7 +33,7 @@ const void Numbers::Menu()
 	cout << "6. Exit" << endl;
 
 	int inp;
-	cout << "Choose a Number System: ";// which no is user is going to enter 
+	cout << "Choose a Number System: "; // which no is user is going to enter
 	cin >> inp;
 	setInput(inp);
 }
@@ -53,17 +52,21 @@ const void Numbers::Menu2()
 	setInput2(inp);
 }
 
-void Numbers::setInput(int input) {
+void Numbers::setInput(int input)
+{
 	this->input = input;
 }
-int Numbers::getInput() const {
+int Numbers::getInput() const
+{
 	return input;
 }
 
-void Numbers::setInput2(int input2) {
+void Numbers::setInput2(int input2)
+{
 	this->input2 = input2;
 }
-int Numbers::getInput2() const {
+int Numbers::getInput2() const
+{
 	return input2;
 }
 
@@ -82,7 +85,7 @@ void Numbers::Navigations()
 		Navigations2();
 		break;
 	case 6:
-		cout << "exit"<<endl;
+		cout << "exit" << endl;
 		break;
 	default:
 		cout << "Invalid Input!" << endl;
@@ -217,7 +220,7 @@ void Numbers::Decimal_Binary()
 		}
 	}
 	binary = reverse(binary);
-	cout << "Binary =" << binary << endl;
+	cout << "Binary = " << binary << endl;
 }
 
 int Numbers::Decimal_Octal(int decimal)

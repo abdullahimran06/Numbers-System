@@ -3,7 +3,7 @@
 #define NUMBER_SYSTEM_H
 #include <string>
 
-string reverse(string str);
+std::string reverse(std::string str);
 class Numbers
 {
 private:
